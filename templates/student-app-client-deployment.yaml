@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: student-app-client
+spec:
+  selector:
+    matchLabels: {{include "common.client" . | nindent 4}}
+  replicas: 1
+  template:
+    metadata:
+      labels: {{include "comin.client" . | nindent 8}}
+  spec:
+      containers: - name: student-app-client
+          image: vinhbk99nd/student-app-client:lastest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
