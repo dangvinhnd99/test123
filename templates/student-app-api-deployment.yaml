@@ -5,7 +5,7 @@ metadata:
 spec:
   selector:
     matchLabels: {{ include "common.fullname" . | nindent 6 }}
-  replicas: {{ .Values.api.repCount }}
+  replicas: {{ .Values.deployment.repCount }}
   template:
     metadata:
       labels: {{ include "common.fullname" . | nindent 8 }}
