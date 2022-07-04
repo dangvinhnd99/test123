@@ -7,5 +7,5 @@ spec:
   ports:
     - port: {{ .Values.client.port }}
       protocol: TCP
-      targetPort: 80
+      targetPort: {{ .Values.client.targetPort }}
   type: ClusterIP
