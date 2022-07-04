@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: student-app-client
+  name: {{ .Values.client.name }}
 spec:
   selector:
     matchLabels: {{include "common.client" . | nindent 6}}
@@ -12,7 +12,7 @@ spec:
     spec:
       containers:
         - name: student-app-client
-          image: vinhbk99nd/student-app-client:lastest
+          image: {{ .Values.client.image }}
           imagePullPolicy: Always
           ports:
             - containerPort: 80
