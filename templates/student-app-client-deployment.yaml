@@ -11,8 +11,8 @@ spec:
       labels: {{include "common.client" . | nindent 8}}
     spec:
       containers:
-        - name: student-app-client
+        - name: {{ .Values.client.name }}
           image: {{ .Values.client.image }}
           imagePullPolicy: Always
           ports:
-            - containerPort: 80
+            - containerPort: {{ .Values.client.port }}
