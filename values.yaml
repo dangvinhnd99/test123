@@ -12,7 +12,7 @@ client:
     port: 8080
     targetPort: 8080
 
-volume:
+mongo_volume:
     name: mongo-pvc
     storage: 256Mi
 mongo:
